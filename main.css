@@ -16,6 +16,7 @@ button{
     border: none;
     transition: all 1s;
     cursor: pointer;
+    outline: none;
 }
 
 ul,article{
@@ -156,4 +157,33 @@ footer {
 
 #copyright{
     color: #fff;
+}
+
+/* Responsive Design */
+
+@media only screen and (max-width: 768px){
+    .banner__text{
+        font-size: 25px;
+    }
+
+    .form-group{
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #add-course-btn{
+        width:100%;
+    }
+
+    .form-group > input {
+        border: 1px solid #000;
+    }
+
+    #calculate-gpa {
+        width: 100%;
+    }
+
+    .table-data{
+        font-size: 15px;
+    }
 }
