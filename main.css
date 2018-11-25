@@ -4,3 +4,156 @@
     box-sizing: border-box;
 }
 
+nav,footer{
+    background-color: #001aff;
+    padding: 20px;
+}
+
+button{
+    padding: 15px;
+    background-color: #001aff;
+    color: #fff;
+    border: none;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+ul,article{
+    list-style: none;
+    display: inline-block;
+}
+
+form{
+    text-align: center;
+    margin: 30px;
+}
+
+.blue {
+    color: #001aff;
+}
+
+.red {
+    color: #f52626;
+}
+
+#logo {
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.banner {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    height: 300px;
+    background-color: rgba(0,0,0,.8);
+}
+
+.banner__text {
+    margin:100px 0 30px 0;
+    color:#fff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+
+
+.banner__btn:hover{
+    transform: scale(1.2);
+    font-size: 15px;
+}
+
+.main-content{
+    padding: 20px 40px;
+}
+
+.main-content__header{
+    display: inline-block;
+    width: 170px;
+    font-size: 25px;
+    font-weight: 500;
+    border-bottom: 3px solid #001aff;
+}
+
+.form-group {
+    display: inline-block;
+    width: 30%;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.form-group > label {
+    display: inline-block;
+    width: 100%;
+    font-size: 20px;
+}
+
+.form-group > input {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+}
+
+.form-group:nth-child(3){
+    text-align: center;
+}
+
+#add-course-btn{
+    padding: 10px;
+    width: 70%;
+    transition: all .3s;
+    border: 1px solid #001aff;
+}
+
+#add-course-btn:hover, #calculate-gpa:hover{
+    background-color: #fff;
+    color: #001aff;
+}
+
+.course-table{
+    margin-top: 30px;
+    text-align: left;
+}
+
+.table-row{
+    border: 1px solid #000;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.table-data {
+    display: inline-block;
+    margin: 10px 40px 10px 30px;
+}
+
+.table-row:nth-child(1) .table-data {
+    font-weight: bold;
+}
+
+.empty-row{
+    padding: 10px;
+    text-align: center;
+}
+
+#calculate-gpa{
+    width: 50%;
+    font-size: 15px;
+    border: 2px solid #001aff;
+    transition: all .3s;
+}
+
+#gpa {
+    display: none;
+    background-color: #001aff;
+    padding: 15px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+}
+
+#copyright{
+    color: #fff;
+}
