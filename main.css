@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+header,main,footer{
+    width: 100%;
+}
+
 nav,footer{
     background-color: #001aff;
     padding: 20px;
@@ -99,6 +103,10 @@ form{
     text-align: center;
 }
 
+#calculate-gpa {
+    margin-left: 310px;
+}
+
 #add-course-btn{
     padding: 10px;
     width: 70%;
@@ -131,7 +139,7 @@ form{
     font-weight: bold;
 }
 
-.empty-row{
+#empty-row{
     padding: 10px;
     text-align: center;
 }
@@ -162,6 +170,10 @@ footer {
 /* Responsive Design */
 
 @media only screen and (max-width: 768px){
+    #calculate-gpa{
+        margin-left: 0;
+    }
+
     .banner__text{
         font-size: 25px;
     }
