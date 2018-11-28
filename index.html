@@ -27,11 +27,11 @@
             <form action="#" method="post" id="course-form">
                 <div class="form-group">
                     <label for="course-unit">Course Unit:</label>
-                    <input type="text" name="course-unit" id="course-unit" required>
+                    <input type="number" name="course-unit" id="course-unit" min="0" max="10" required>
                 </div>
                 <div class="form-group">
                     <label for="course-score">Course Score:</label>
-                    <input type="text" name="course-score" id="course-score" required>
+                    <input type="number" name="course-score" id="course-score" min="0" max="100" required>
                 </div>
                 <div class="form-group">
                     <button type="submit" id="add-course-btn">Add Course</button>
