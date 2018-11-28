@@ -1,4 +1,20 @@
 let courses = [];
+let course = {};
+
+window.onload = () => {
+    if(localStorage.getItem('courseList')){
+        let empty = document.getElementById('empty-row')
+        empty.style.display = 'none';
+        let localCourses = JSON.parse(localStorage.getItem('courseList',courses));
+        console.log(localCourses)
+        if(localCourses.length > 0){
+            localCourses.forEach(course => {
+                createRow(course);
+            });
+        }
+    }
+}
+    
 
 let addCourseForm = document.getElementById('course-form');
 
@@ -29,12 +45,15 @@ const createRow = (params) => {
 }
 
 function deleteCourse(id) {
-    courses.splice(id,1);
+    let courseList = JSON.parse(localStorage.getItem('courseList'));
+    courseList.splice(id, 1);
+    localStorage.removeItem('courseList');
+    localStorage.setItem('courseList', JSON.stringify(courseList));
     window.location.reload();
 }
 
-const calculateGpa = (courses) => {
-    console.log(courses);
+const calculateGpa = (courseList) => {
+    let courses = JSON.parse(courseList);
     let totalUnits = 0;
     let gradePoints = 0;
     courses.forEach(course => {
@@ -59,12 +78,25 @@ addCourseForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let unit = document.getElementById('course-unit');
     let score = document.getElementById('course-score');
-    let course = {
-        id: 'Course ' + (courses.length + 1),
-        unit: unit.value,
-        score: score.value
-    };
-    courses.push(course);
+    if(!localStorage.getItem('courseList')){
+        course = {
+            id: 'Course 1',
+            unit: unit.value,
+            score: score.value
+        };
+        courses.push(course);
+        localStorage.setItem('courseList',JSON.stringify(courses));
+    }else {
+        let courseList = JSON.parse(localStorage.getItem('courseList'));
+        course = {
+            id: 'Course ' + (courseList.length + 1),
+            unit: unit.value,
+            score: score.value
+        };
+        courseList.push(course);
+        localStorage.removeItem('courseList');
+        localStorage.setItem('courseList', JSON.stringify(courseList));
+    }
     createRow(course);
     addCourseForm.reset();
     if (courses.length > 0) {
@@ -74,8 +106,8 @@ addCourseForm.addEventListener('submit', (e) => {
 });
 
 document.getElementById('calculate-gpa').addEventListener('click', () => {
-    if(courses.length > 0){
-        let cgpa = calculateGpa(courses);
+    if(JSON.parse(localStorage.getItem('courseList')).length > 0){
+        let cgpa = calculateGpa(localStorage.getItem('courseList'));
         document.getElementById('current-gpa').textContent = parseFloat(Math.round(cgpa * 100) / 100).toFixed(2);
         document.getElementById('gpa').style.display = 'block';
     }else {
